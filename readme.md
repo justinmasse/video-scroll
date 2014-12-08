@@ -8,7 +8,7 @@ This experiment plays a video as the user scrolls, rather then adjusting the cur
 
 Works best in Chrome
 
-Where can I see a demo
+Where can I see a demo?
 --------------
 
 http://www.justinmasse.com/experiments/video-scroll/
