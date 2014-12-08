@@ -1,0 +1,63 @@
+// select video element
+var vid = document.getElementById('v0'),
+	speed = 200,
+	playBackSpeed = 0,
+	isPlaying = false,
+	currentTime, moveTo;
+
+var lastPos = 0,
+    timer = 0,
+    distance;
+
+$(function(){
+
+	$(vid).on('loadedmetadata', initVideo);
+	var setHeight = document.getElementById("set-height");
+	function initVideo(){
+		vid.pause();
+		vid.playbackRate = playBackSpeed;
+		//set current time based on scroll position
+		currentTime = window.pageYOffset/speed;
+		vid.currentTime = currentTime;
+		setHeight.style.height = Math.floor(vid.duration) * speed + "px";
+	}
+
+	window.onscroll = function(){
+		checkScrollSpeed();
+		if(!isPlaying){
+			vid.pause();
+		}
+	}
+
+	function checkScrollSpeed(){
+	    var newPos = window.scrollY;
+	    distance = newPos -  lastPos;
+	    lastPos = newPos;
+	};
+
+	setInterval(function(){
+		moveTo = window.pageYOffset/speed;
+		if(moveTo > currentTime){
+			if((moveTo - currentTime) > playBackSpeed){
+				playBackSpeed = moveTo - currentTime;
+			}
+			console.log("distance: "+distance+"  time:"+ playBackSpeed);
+			vid.playbackRate = (distance/playBackSpeed);
+			currentTime = vid.currentTime;
+			if(!isPlaying){
+				vid.play();
+			}
+			isPlaying = true;
+		}else{
+			vid.pause();
+			isPlaying = false;
+			playBackSpeed = 0;
+			currentTime = vid.currentTime;
+		}
+	}, 5);
+
+	
+});
+
+
+
