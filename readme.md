@@ -6,6 +6,8 @@ What does it do?
 
 This experiment processes a video as the user scrolls, rather then adjusting the current frame it adjusts the playback speed. The intention was to give a more fluid experience and avoid gitteriness.
 
+Works best in Chrome
+
 Where can I see a demo
 --------------
 
