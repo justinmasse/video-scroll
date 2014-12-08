@@ -9,7 +9,7 @@ This experiment processes a video as the user scrolls, rather then adjusting the
 Where can I see a demo
 --------------
 
-justinmasse.com/experiments/video-scroll/
+http://www.justinmasse.com/experiments/video-scroll/
 
 What is next?
 --------------
