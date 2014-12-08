@@ -4,7 +4,7 @@ Video Scroll
 What does it do?
 --------------
 
-This experiment plays a video as the user scrolls, rather then adjusting the current frame it adjusts the playback speed. The intention was to give a more fluid experience and avoid gitteriness.
+This experiment plays a video as the user scrolls, rather then adjusting the current frame it adjusts the playback speed. The intention was to give a more fluid experience and avoid jitteriness.
 
 Works best in Chrome
 
